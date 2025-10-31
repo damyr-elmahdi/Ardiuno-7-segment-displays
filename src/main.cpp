@@ -1,9 +1,13 @@
 #include <Arduino.h>
-# include "sevenSegDisplayer.hpp"
 
-// First display (tens digit - left) - pins 2-8
+#include "sevenSegDisplayer.hpp"
+
+// Left display (tens digit) - pins 2-8 map to segments B,A,C,D,E,F,G
+// So we pass them in order: A, B, C, D, E, F, G = 3, 2, 4, 5, 6, 7, 8
 SevenSegDisplayer tensDisp {3, 2, 4, 5, 6, 7, 8};
-// Second display (units digit - right) - pins 9-13, A0-A1
+
+// Right display (units digit) - pins 9-A1 map to segments A,B,C,D,E,F,G
+// So we pass them in order: A, B, C, D, E, F, G = 9, 10, 11, 12, 13, A0, A1
 SevenSegDisplayer unitsDisp {9, 10, 11, 12, 13, A0, A1};
 
 void setup()
